@@ -1,4 +1,4 @@
-<domain type='kvm'>
+<domain type='qemu'>
   <name>REPLACE_NAME</name>
   <memory unit='MiB'>REPLACE_MEM</memory>
   <currentMemory unit='MiB'>REPLACE_MEM</currentMemory>
@@ -14,15 +14,13 @@
     <apic/>
     <pae/>
   </features>
-  <cpu mode='host-passthrough'/>
   <clock offset='utc'/>
   <on_poweroff>destroy</on_poweroff>
   <on_reboot>restart</on_reboot>
   <on_crash>restart</on_crash>
   <devices>
-    <emulator>/usr/bin/kvm-spice</emulator>
     <disk type='file' device='disk'>
-      <driver name='qemu' type='raw'/>
+      <driver name='qemu' type='qcow2' queues='8'/>
       <source file='REPLACE_IMAGE'/>
       <target dev='vda' bus='virtio'/>
     </disk>

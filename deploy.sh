@@ -11,10 +11,15 @@
 # Set OS version for target hosts
 # Ubuntu16.04 or CentOS7
 #export OS_VERSION=xenial/centos7
+export OS_VERSION=xenial
 
 # Set ISO image corresponding to your code
 # export TAR_URL=file:///home/compass/compass4nfv.iso
 #export TAR_URL=
+#export TAR_URL=file:///home/opnfv/compass/opnfv-7.1.tar.gz
+
+# build.sh first
+export TAR_URL=file://$PWD/work/building/compass.tar.gz
 
 #export DEPLOY_HARBOR="true"
 #export HABOR_VERSION="1.5.0"
@@ -23,13 +28,22 @@
 # You need to comment out it when virtual deploy.
 #export INSTALL_NIC=eth1
 
+# TODO: deployment hosts / Openstack settings?
 # DHA is your dha.yml's path
 # export DHA=/home/compass4nfv/deploy/conf/vm_environment/os-nosdn-nofeature-ha.yml
 #export DHA=
+SCENARIO=${SCENARIO:-os-nosdn-nofeature-noha.yml}
+export DHA=./deploy/conf/vm_environment/$SCENARIO
 
 # NETWORK is your network.yml's path
 # export NETWORK=/home/compass4nfv/deploy/conf/vm_environment/huawei-virtual1/network.yml
 #export NETWORK=
+export NETWORK=./deploy/conf/vm_environment/network.yml
+
+export VIRT_NUMBER=2
+export VIRT_CPUS=3
+export VIRT_MEM=9000
+export VIRT_DISK=200G
 
 #export OPENSTACK_VERSION=${OPENSTACK_VERSION:-ocata}
 

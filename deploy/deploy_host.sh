@@ -50,6 +50,7 @@ function deploy_host(){
     --rsa_file="$rsa_file" --enable_vpnaas="${ENABLE_VPNAAS}" --odl_l3_agent="${odl_l3_agent}" \
     --moon_cfg="${MOON_CFG}" --onos_sfc="${onos_sfc}" --plugins="${plugins}" \
     --cluster_param="${cluster_param}" --offline_repo_port="${COMPASS_REPO_PORT}" \
+    --install_os_timeout="360" \
     --offline_deployment="${OFFLINE_DEPLOY}"
 
     RET=$?

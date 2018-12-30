@@ -86,7 +86,7 @@ function  _prepare_python_env() {
                 sudo apt-get update -y
                 sudo apt-get install -y --force-yes mkisofs bc curl ipmitool openvswitch-switch
                 sudo apt-get install -y --force-yes git python-dev python-pip figlet sshpass
-                sudo apt-get install -y --force-yes libxslt-dev libxml2-dev libvirt-dev build-essential qemu-utils qemu-kvm libvirt-bin virtinst libmysqld-dev
+                sudo apt-get install -y --force-yes libxslt-dev libxml2-dev libvirt-dev build-essential qemu-utils qemu libvirt-bin virtinst libmysqld-dev
                 sudo apt-get install -y --force-yes libffi-dev libssl-dev
             else
                 sudo yum install -y centos-release-openstack-queens
@@ -94,7 +94,7 @@ function  _prepare_python_env() {
                 sudo yum install openvswitch -y --nogpgcheck
                 sudo yum install -y git python-devel python-pip figlet sshpass mkisofs bc curl ipmitool
                 sudo yum install -y libxslt-devel libxml2-devel libvirt-devel libmysqld-devel
-                sudo yum install -y qemu-kvm qemu-img virt-manager libvirt libvirt-python libvirt-client virt-install virt-viewer
+                sudo yum install -y qemu qemu-img virt-manager libvirt libvirt-python libvirt-client virt-install virt-viewer
                 sudo yum install -y libffi libffi-devel openssl-devel
                 sudo yum groupinstall -y 'Development Tools'
             fi
